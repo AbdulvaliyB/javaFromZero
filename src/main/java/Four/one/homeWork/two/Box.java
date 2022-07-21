@@ -7,7 +7,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Setter
 @Getter
-public class Box<K,T> {
+public class Box<K, T> {
     private K key;
     private T obj;
 
