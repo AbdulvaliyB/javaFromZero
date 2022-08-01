@@ -28,24 +28,24 @@ public class Main {
             phoneBook.addGroup(groupName);
         }
         while (true) {
-            boolean check=true;
+            boolean check = true;
             System.out.println("\nLets add contacts to the groups");
             System.out.print("Enter phone number of the contact : ");
             String contactNumber = scanner.nextLine();
             if (contactNumber.equals("0")) break;
 //            if (contactList.get(contactNumber)!=null) System.out.println("There is no such contact!\n");
-            try{
+            try {
                 Contact contact = contactList.get(contactNumber);
                 System.out.println(contact);
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("There is no such contact!\n");
-                check=false;
+                check = false;
             }
-                while (check) {
-                    System.out.print("Enter the name of the group");
-                    String groupName = scanner.nextLine();
-                    if (groupName.equals("0")) break;
-                    phoneBook.addContact(contactList.get(contactNumber), groupName);
+            while (check) {
+                System.out.print("Enter the name of the group");
+                String groupName = scanner.nextLine();
+                if (groupName.equals("0")) break;
+                phoneBook.addContact(contactList.get(contactNumber), groupName);
 
             }
 
