@@ -1,9 +1,12 @@
-package Four.four.homeWork.one;
+package Four.five.homeWork.one;
 
-import lombok.*;
+import Four.four.homeWork.one.Contact;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,10 +14,9 @@ import java.util.Map;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 public class PhoneBook {
 
-    private Map<String, List<Contact>> groupContacts = new HashMap<>();
+    private Map<String, List<Contact>> groupContacts;
 
 
     public boolean addGroup(String groupName) {
@@ -25,6 +27,16 @@ public class PhoneBook {
     public void addContact(Contact contact, String group) {
         groupContacts.get(group).add(contact);
     }
+
+    public Contact findContact(String phoneNumber) {
+        for (List<Contact> contacts : groupContacts.values()) {
+            for (Contact contact : contacts) {
+                if (contact.getPhoneNumber().equals(phoneNumber)) return contact;
+            }
+        }
+        return null;
+    }
+
 
     @Override
     public String toString() {
@@ -43,15 +55,6 @@ public class PhoneBook {
             }
         }
         return showAll;
-    }
-
-    public Contact findContact(String phoneNumber) {
-        for (List<Contact> contacts : groupContacts.values()) {
-            for (Contact contact : contacts) {
-                if (contact.getPhoneNumber().equals(phoneNumber)) return contact;
-            }
-        }
-        return null;
     }
 
 }

@@ -52,14 +52,14 @@ public class Main {
         }
         System.out.println(phoneBook);
 //
-//        Contact contact1 = new Contact("Petya", "+998971670555");
-//        Contact contact2 = new Contact("Vanya", "+998997200855");
-//
-//        phoneBook.addGroup("Friends");
-//        phoneBook.addContact(contact1, "Friends");
-//        phoneBook.addContact(contact2, "Friends");
-//
-//        System.out.println(phoneBook);
+        Contact contact1 = new Contact("Petya", "+998971670555");
+        Contact contact2 = new Contact("Vanya", "+998997200855");
+
+        phoneBook.addGroup("Friends");
+        phoneBook.addContact(contact1, "Friends");
+        phoneBook.addContact(contact2, "Friends");
+
+        System.out.println(phoneBook);
 
     }
 }
