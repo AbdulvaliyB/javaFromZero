@@ -20,7 +20,12 @@ public class Main {
 
         while (true) {
             System.out.println("Waiting for enter the number of floor: (for completion 0)");
-            currentFloor = scanner.nextInt();
+
+            try {
+                currentFloor = scanner.nextInt();
+            }catch (Exception e){
+                System.out.println("ERROR!!!");
+            }
 
             if (currentFloor == previousFloor) {
                 System.out.println("This floor already entered");
