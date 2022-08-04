@@ -15,7 +15,7 @@ public class Main {
             System.out.println("Lets create contacts!");
             System.out.print("Enter name of contact: ");
             String contactName = scanner.nextLine();
-            if (contactName.equals("0")) break;
+            if ("0".equals(contactName)) break;
             System.out.print("Enter phone number of contact: ");
             String contactNumber = scanner.nextLine();
             contactList.put(contactNumber, new Contact(contactName, contactNumber));
@@ -24,7 +24,7 @@ public class Main {
             System.out.println("\nLets create groups");
             System.out.print("Enter name of group: ");
             String groupName = scanner.nextLine();
-            if (groupName.equals("0")) break;
+            if ("0".equals(groupName)) break;
             phoneBook.addGroup(groupName);
         }
         while (true) {
@@ -32,7 +32,7 @@ public class Main {
             System.out.println("\nLets add contacts to the groups");
             System.out.print("Enter phone number of the contact : ");
             String contactNumber = scanner.nextLine();
-            if (contactNumber.equals("0")) break;
+            if ("0".equals(contactNumber)) break;
 //            if (contactList.get(contactNumber)!=null) System.out.println("There is no such contact!\n");
             try {
                 Contact contact = contactList.get(contactNumber);
@@ -44,7 +44,7 @@ public class Main {
             while (check) {
                 System.out.print("Enter the name of the group");
                 String groupName = scanner.nextLine();
-                if (groupName.equals("0")) break;
+                if ("0".equals(groupName)) break;
                 phoneBook.addContact(contactList.get(contactNumber), groupName);
 
             }
